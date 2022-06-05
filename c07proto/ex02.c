@@ -8,6 +8,7 @@ int main()
 	printf("%d",ft_ultimate_range(range, 2, 5));
 }
 
+// no idea if this works anot
 int	ft_ultimate_range(int **range, int min, int max)
 {
 	int n;

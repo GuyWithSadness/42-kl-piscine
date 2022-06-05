@@ -5,7 +5,7 @@ char	**ft_split(char *str, char *charset);
 int main()
 {
 	char** test;
-	test = ft_split("0awdawd123wdahi4wadihwabd3idwabd8aiwdiah1", "0123456789");
+	test = ft_split("5adaw15a5w1d5a1d2aw1d21aw3d1a3wd1", "0123456789");
 	for (int i = 0; i <= 10; i++)
 		printf("%s\n",test[i]);
 }

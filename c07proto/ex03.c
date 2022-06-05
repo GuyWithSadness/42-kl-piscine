@@ -5,12 +5,12 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 int main()
 {
 	char *strs[] = {
-						"",
-						"",
-						"",
-						"",
-						"",
-						"",
+						"pasta",
+						"pasta",
+						"pasta",
+						"pasta",
+						"pasta",
+						"pasta",
 					};
 	char sep[] = " pizza ";
 	printf("%s", ft_strjoin(6, strs, sep));
