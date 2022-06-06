@@ -10,8 +10,8 @@ int		countwords(char *str2);
 int main()
 {
 	char** test;
-	char a[] = "5adaw15a5w1d5a1d2aw1d21aw3d1a3wd1";
-	char b[] = "0123456789";
+	char a[] = "Hi, i am bob, i love to eat pizzas";
+	char b[] = "a";
 	test = ft_split(a, b);
 	for (int i = 0; i <= 10; i++)
 		printf("%s\n",test[i]);
@@ -39,6 +39,7 @@ char	**ft_split(char *str, char *charset)
 	}
 	splitted[i] = (char *) malloc (sizeof(char));
 	ft_cpy(splitted, str, sets);
+	splitted[sets] = 0;
 	return (splitted);
 }
 
@@ -119,7 +120,7 @@ void	ft_cpy(char **splitted, char *str, int sets)
 	int i;
 	int j;
 	int x;
-	printf("in ft_cpy");
+	printf("in ft_cpy\n");
 	j = 0;
 	i = 0;
 	while (j < sets)
@@ -140,6 +141,7 @@ void	ft_cpy(char **splitted, char *str, int sets)
 			str[i] = -2;
 			i++;
 		}
+		splitted[j][x] = '\0';
 		j++;
 	}
 }
