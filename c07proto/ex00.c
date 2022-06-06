@@ -21,17 +21,15 @@ int main()
 
 char	*ft_strdup(char *src)
 {
-	char *dst;
-	int i;
+	char	*dst;
+	int		i;
 
 	i = 0;
 	while (src[i] != '\0')
 		i++;
-	printf("here are the size allocated = %d\n", i+1);
 	dst = (char *) malloc (i+1 * sizeof(char));
 	if (dst == 0)
 		return (0);
-
 	i = -1;
 	while (src[++i] != '\0')
 		dst[i] = src[i];
