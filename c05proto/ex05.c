@@ -4,26 +4,37 @@ int ft_sqrt(int nb);
 int ft_brutesqrt(int nb);
 int BabyleonMeth(int nb);
 
+#include <time.h>
 int main()
 {
+	int start;
+	int end;
 	// printf("%d\n", ft_sqrt(3));
-	printf("%d\n", ft_brutesqrt(46340*46340));
-	// printf("%d\n", BabyleonMeth(4));
-}
-
-int ft_sqrt(int nb)
-{
-	int i;
-
-	i = 0;
-	while (i <= 46340)
+	for (int i = 0; i <= (46340*46340); i++)
 	{
-		if (i * i == nb)
-			return i;
-		i++;
+		start = clock();
+		if (ft_brutesqrt(i) != 0)
+		{
+			printf("%d ", ft_brutesqrt(i));
+			end = clock();
+			printf("Time taken = %d seconds\n", (end - start));
+		}
 	}
-	return 0;
 }
+
+// int ft_sqrt(int nb)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while (i <= 46340)
+// 	{
+// 		if (i * i == nb)
+// 			return i;
+// 		i++;
+// 	}
+// 	return 0;
+// }
 
 // ctrl+/ to uncomment this part
 // int ft_brutesqrt(int nb)
@@ -57,19 +68,19 @@ int ft_sqrt(int nb)
 // 	return 0;
 // }
 
-int BabyleonMeth(int nb)
-{
-	long int x;
+// int BabyleonMeth(int nb)
+// {
+// 	long int x;
 
-	x = 1;
-	while (x * x != nb)
-	{
-		x = ((x * x) + nb) / (2 * x);
-		if (x == 0)
-			break;
-	}
-	return ((int) x);
-}
+// 	x = 1;
+// 	while (x * x != nb)
+// 	{
+// 		x = ((x * x) + nb) / (2 * x);
+// 		if (x == 0)
+// 			break;
+// 	}
+// 	return ((int) x);
+// }
 
 int ft_brutesqrt(int nb)
 {
@@ -77,7 +88,7 @@ int ft_brutesqrt(int nb)
 	int j;
 
 	i = 46340;
-	while (1)
+	while (i != 0)
 	{
 		if (i * i > nb)
 		{
@@ -87,12 +98,10 @@ int ft_brutesqrt(int nb)
 		else
 			break;
 	}
-	while (i != 0)
+	while (i != j)
 	{
 		if (i * i == nb)
 			return i;
-		else if (i == j)
-			return 0;
 		i++;
 	}
 	return 0;

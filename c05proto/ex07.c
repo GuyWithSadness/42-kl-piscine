@@ -4,11 +4,9 @@ int ft_is_prime(int nb);
 
 int main()
 {
-	printf("Next Prime = %d\n", ft_find_next_prime(68));
-	printf("Next Prime = %d\n", ft_find_next_prime(0));
-	printf("Next Prime = %d\n", ft_find_next_prime(5));
-	printf("Next Prime = %d\n", ft_find_next_prime(127348));
-	printf("Next Prime = %d\n", ft_find_next_prime(696969));
+
+	for (int i = 0; i <= 1000; i++)
+		printf("Next Prime of %d = %d\n",i ,ft_find_next_prime(i));
 }
 
 int ft_find_next_prime(int nb)

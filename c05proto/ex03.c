@@ -3,13 +3,16 @@ int ft_recursive_power(int nb, int power);
 
 int main()
 {
-	printf("%d", ft_recursive_power(8, 10));
+	for (int i = -3; i <= 15; i++)
+		printf("%d\n", ft_recursive_power(2, i));
 }
 
 int ft_recursive_power(int nb, int power)
 {
 	int a;
 
+	if (power < 0)
+		return (0);
 	if (power == 0)
 		return (1);
 	if (power == 1)

@@ -4,7 +4,7 @@ int ft_is_prime(int nb);
 
 int main()
 {
-	for (int i = 0; i <= 100; i++)
+	for (int i = 0; i <= 10000; i++)
 		if (ft_is_prime(i) == 1)
 			printf("%d is a prime number = %d\n", i, ft_is_prime(i));
 }

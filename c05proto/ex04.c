@@ -4,8 +4,8 @@ int ft_ite_fibonacci(int index);
 
 int	main()
 {
-	printf("%d\n", ft_rec_fibonacci(27));
-	printf("%d", ft_ite_fibonacci(27));
+	printf("%d\n", ft_rec_fibonacci(3));
+	printf("%d", ft_ite_fibonacci(3));
 }
 
 int	ft_rec_fibonacci(int index)

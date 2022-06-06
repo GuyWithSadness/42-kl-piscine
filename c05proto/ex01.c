@@ -5,7 +5,8 @@ int ft_recursive_factorial(int nb);
 
 int main()
 {
-	printf("%d", ft_recursive_factorial(15));
+	for (int i = 0; i <= 45; i++)
+		printf("%d\n", ft_recursive_factorial(i));
 }
 
 int ft_recursive_factorial(int nb)
