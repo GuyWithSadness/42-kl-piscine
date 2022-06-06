@@ -21,23 +21,16 @@ int main()
 
 char	*ft_strdup(char *src)
 {
-	char *a;
+	char *dst;
 	int i;
 
 	i = 0;
 	while (src[i] != '\0')
 		i++;
 	printf("here are the size allocated = %d\n", i+1);
-	a = (char *) malloc (i+1 * sizeof(char));
-	if (a == 0)
+	dst = (char *) malloc (i+1 * sizeof(char));
+	if (dst == 0)
 		return (0);
-	ft_cpy(a,src);
-	return (a);
-}
-
-char	*ft_cpy(char *dst, char *src)
-{
-	int	i;
 
 	i = -1;
 	while (src[++i] != '\0')
