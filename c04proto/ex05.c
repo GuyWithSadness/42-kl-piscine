@@ -7,21 +7,21 @@ int checkspace(char *str);
 #include <stdio.h>
 int main()
 {
-	printf("1 - %d\n", ft_atoi_base("", "0123456789"));
-	printf("2 - %d\n", ft_atoi_base("   +--+---5672674", ""));
-	printf("3 - %d\n", ft_atoi_base("10101110101", "01+-"));
-	printf("4 - %d\n", ft_atoi_base("   ++---yourmom", "0123456789"));
-	printf("5 - %d\n", ft_atoi_base("23", "0123456789"));
-	printf("6 - %d\n", ft_atoi_base("-129yourmom389", "0123456789"));
-	printf("7 - %d\n", ft_atoi_base("++---23977", "0123456789"));
-	printf("8 - %d\n", ft_atoi_base("++--2747", "0123456789"));
-	printf("9 - %d\n", ft_atoi_base("  sdad ++---yourmom", "0123456789"));
-	printf("10 - %d\n", ft_atoi_base("   +--+---5672674", "0123456789"));
-	printf("11 - %d\n", ft_atoi_base("   +--+---122213", "012"));
-	printf("12 - %d\n", ft_atoi_base("   +--+---567267", "0123456789"));
-	printf("13 - %d\n", ft_atoi_base("122212134", "012345"));
-	printf("14 - %d\n", ft_atoi_base("    --+-101010111", "01"));
-	printf("15 - %d\n", ft_atoi_base("    --+-101aa010111", "01"));
+	printf("1 = %d\n", ft_atoi_base("", "0123456789"));
+	printf("2 = %d\n", ft_atoi_base("   +--+---5672674", ""));
+	printf("3 = %d\n", ft_atoi_base("10101110101", "01+-"));
+	printf("4 = %d\n", ft_atoi_base("   ++---yourmom", "0123456789"));
+	printf("5 = %d\n", ft_atoi_base("23", "0123456789"));
+	printf("6 = %d\n", ft_atoi_base("-129yourmom389", "0123456789"));
+	printf("7 = %d\n", ft_atoi_base("++---23977", "0123456789"));
+	printf("8 = %d\n", ft_atoi_base("++--2747", "0123456789"));
+	printf("9 = %d\n", ft_atoi_base("  sdad ++---yourmom", "0123456789"));
+	printf("10 = %d\n", ft_atoi_base("   +--+---5672674", "0123456789"));
+	printf("11 = %d\n", ft_atoi_base("   +--+---122213", "012"));
+	printf("12 = %d\n", ft_atoi_base("   +--+---567267", "0123456789"));
+	printf("13 = %d\n", ft_atoi_base("122212134", "012345"));
+	printf("14 = %d\n", ft_atoi_base("    --+-101010111", "01"));
+	printf("15 = %d\n", ft_atoi_base("    --+-101aa010111", "01"));
 }
 
 int	ft_atoi_base(char *str, char *base)

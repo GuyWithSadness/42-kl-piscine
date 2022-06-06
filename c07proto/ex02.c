@@ -16,22 +16,22 @@ int	ft_ultimate_range(int **range, int min, int max)
 	int *a;
 	int i;
 
-	neededspace = max - min;
-	a = (int *) malloc (neededspace * sizeof(int));
-	if (a == 0)
-		return (-1);
 	if (min >= max)
 	{
 		*range = NULL;
 		return (0);
 	}
+	neededspace = max - min;
+	a = (int *) malloc (neededspace * sizeof(int));
+	if (a == 0)
+		return (-1);
 	n = min;
 	i = 0;
-	while (n < max && i < neededspace)
+	i = -1;
+	while (min < max && ++i < neededspace)
 	{
-		a[i] = n;
-		i++;
-		n++;
+		a[i] = min;
+		min++;
 	}
 	*range = a;
 	return (neededspace);
