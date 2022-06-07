@@ -1,39 +1,25 @@
+void ft_foreach(int *tab, int length, void(*f)(int));
+
+void ft_foreach(int *tab, int length, void(*f)(int))
+{
+	int	i;
+
+	i = 0;
+	while (i < length)
+	{
+		f(tab[i]);
+		i++;
+	}
+}
+
 #include <stdio.h>
-#include <string.h>
-char	*ft_strcpy(char *dest, char *src);
+void ft_putnbr(int a)
+{
+	printf("%d\n", a);
+}
 
 int main()
 {
-
-	char a[20];
-	char a2[20];
-	ft_strcpy(a, "Whats");
-	printf("%s \n", a);
-	for(int i = 0; i < 21; i++)
-	{
-		printf("%d ", a[i]);
-	}
-	strcpy(a2, "whats");
-	printf("\n%s\n", a2);
-	for(int i = 0; i < 21; i++)
-	{
-		printf("%d ", a2[i]);
-	}
-
-}
-
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	n;
-	n = 0;
-
-	while (src[n] != '\0')
-	{
-		dest[n] = src[n];
-		n++;
-	}
-	dest[n] = '\0';
-
-	return dest;
+	int tab[] = {1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0};
+	ft_foreach(tab, 20, &ft_putnbr);
 }

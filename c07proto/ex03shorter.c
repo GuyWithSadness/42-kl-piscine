@@ -7,14 +7,14 @@ void	cpytostr(char **strs, char *fullstr, char *sep, int size);
 int main()
 {
 	char *strs[] = {
-						"1",
-						"2",
-						"3",
-						"5",
-						"4",
-						"6",
+						"help",
+						"reeeee",
+						"adahjwdhaowbhda",
+						"eaewdawdaw",
+						"potato",
+						"banana",
 					};
-	char sep[] = " a ";
+	char sep[] = "-epic-";
 	printf("%s", ft_strjoin(6, strs, sep));
 }
 

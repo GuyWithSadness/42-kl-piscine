@@ -4,9 +4,7 @@ int ft_is_prime(int nb);
 
 int main()
 {
-
-	for (int i = 0; i <= 1000; i++)
-		printf("Next Prime of %d = %d\n",i ,ft_find_next_prime(i));
+	printf("Next Prime  = %d\n" ,ft_find_next_prime(100000000));
 }
 
 int ft_find_next_prime(int nb)
@@ -24,9 +22,9 @@ int ft_is_prime(int nb)
 	int i;
 
 	i = 2;
-	if (nb == 0 || nb == 1)
+	if (nb <= 1)
 		return 0;
-	while (i < nb)
+	while (i < nb/i)
 	{
 		if (nb % i == 0)
 			return 0;

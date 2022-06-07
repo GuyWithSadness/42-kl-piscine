@@ -1,39 +1,33 @@
+#include <stdlib.h>
+
+int	*ft_map(int *tab, int length, int(*f)(int));
+
+int	*ft_map(int *tab, int length, int(*f)(int))
+{
+	int i;
+	int *result;
+
+	i = 0;
+	result = (int *) malloc (length * (sizeof(int)));
+	while (i < length)
+	{
+		result[i] = f(tab[i]);
+		i++;
+	}
+	return (result);
+}
+
 #include <stdio.h>
-#include <string.h>
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+int ft_multi(int a)
+{
+	return (a*a);
+}
 
 int main()
 {
-	int i;
-	char a[14];
-	char b[14];
-	char c[] = "explain";
-	ft_strncpy(a, c, 7);
-	printf("my funciton: %s\n", a);
-	for(i = 0; i < 15; i++)
-	{
-		printf("%d ", a[i]);
-	}
-
-	strncpy(b, c, 7);
-	printf("\nsystem funciton: %s\n", b);
-	for(i = 0; i < 15; i++)
-	{
-		printf("%d ", b[i]);
-	}
-}
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-	i = 0;
-
-	while(i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-
-	dest[i] = '\0';
-	return dest;
+	int tab[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+	int *result;
+	result = ft_map(tab, 20, &ft_multi);
+	for (int i = 0; i < 20; i++)
+		printf("%d ", result[i]);
 }
