@@ -10,8 +10,8 @@ int		countwords(char *str2);
 int main()
 {
 	char** test;
-	char a[] = "Hi, i am bob, i love to eat pizzas";
-	char b[] = "a";
+	char a[] = "test";
+	char b[] = "t";
 	test = ft_split(a, b);
 	for (int i = 0; i <= 10; i++)
 		printf("%s\n",test[i]);
@@ -20,24 +20,27 @@ int main()
 char	**ft_split(char *str, char *charset)
 {
 	char **splitted;
+	// char *str;
 	char *str2;
 	int sets;
 	int i;
 	int words;
 
+	// str = ft_strdup(str3);
 	str2 = ft_strdup(str);
 	sets = findsep(str, str2, charset);
-	printf("Allocating memory of %d to splitted array\n", sets);
+	printf("Allocating memory of %d to splitted array\n", sets+1);
 	splitted = (char **) malloc (sets + 1 * sizeof(char *));
 	i = 0;
-	while (i < sets-1)
+	while (i < sets)
 	{
-		printf("Allocating memory to %dth set\n", i);
 		words = countwords(str2);
 		splitted[i] = (char *) malloc (words + 1 * sizeof(char));
+		printf("Allocating memory of %d to %dth set\n",words+1, i);
 		i++;
 	}
 	splitted[i] = (char *) malloc (sizeof(char));
+	printf("Allocated 1 memory for null character in %d array\n", i);
 	ft_cpy(splitted, str, sets);
 	splitted[sets] = 0;
 	return (splitted);
@@ -58,7 +61,8 @@ char	*ft_strdup(char *src)
 	i = -1;
 	while (src[++i] != '\0')
 		dst[i] = src[i];
-	dst[i] = '\0';
+	printf("placing 0 at the last pointer(%d)\n",i);
+	dst[i] = 0;
 	printf("successfully duplicated\n");
 	return (dst);
 }
@@ -80,10 +84,10 @@ int		findsep(char *str, char *str2, char *charset)
 			if (str[i] == charset[j])
 			{
 				printf("found a seperator\n");
+				printf("replaced the seperator with -1 in the main\n");
 				str[i] = -1;
 				printf("replacing the seperator with -1 in the backup\n");
 				str2[i] = -1;
-				printf("replaced the seperator with -1\n");
 				sets++;
 			}
 		}
@@ -98,19 +102,27 @@ int		countwords(char *str2)
 	int wordcount;
 	int seen;
 	int i;
-
+	printf("in countwords\n");
 	seen = 0;
+	i = 0;
 	while(seen != 2)
 	{
 		if (str2[i] == -1 && seen == 0)
+		{
+			printf("start counting\n");
 			seen = 1;
+		}
 		else if (str2[i] == -1 && seen == 1)
 			seen = 2;
-		str2[i] = -2;
 		if (seen == 1)
+		{
+			printf("found a word = %s\n", str2[i]);
 			wordcount++;
+		}
+		str2[i] = -2;
 		i++;
 	}
+	printf("counted %d of words", wordcount - 1);
 	return (wordcount - 1);
 }
 
@@ -135,6 +147,7 @@ void	ft_cpy(char **splitted, char *str, int sets)
 				seen = 2;
 			if (seen == 1 && str[i] != -1)
 			{
+				printf("copying %s to %i word of %i letter of splitted..", str[i], j, x);
 				splitted[j][x] = str[i];
 				x++;
 			}
