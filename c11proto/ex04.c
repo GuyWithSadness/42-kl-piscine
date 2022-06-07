@@ -1,31 +1,34 @@
-#include <stdio.h>
-int ft_str_is_lowercase(char *str);
+int	ft_is_sort(int *tab, int length, int(*f)(int, int));
 
-int main()
-{
-	char a[] = "";
-	int test = ft_str_is_lowercase(a);
-	char b[] = "oops!";
-	int test2 = ft_str_is_lowercase(b);
-	char c[] = "11231";
-	int test3 = ft_str_is_lowercase(c);
-	char d[] = "123sajd!!==";
-	int test4 = ft_str_is_lowercase(d);
-	char e[] = "ajkwdhkjaw";
-	int test5 = ft_str_is_lowercase(e);
-	printf("%d %d %d %d %d", test, test2 , test3 , test4, test5);
-}
-
-int ft_str_is_lowercase(char *str)
+int	ft_is_sort(int *tab, int length, int(*f)(int, int))
 {
 	int i;
+	int x;
 
 	i = 0;
-	while ( str[i] != '\0' )
+	while (i < length)
 	{
-		if ( str[i] < 'a' || str[i] > 'z')
-		    return (0);
-		++i;
+		x = i + 1;
+		while (x < length)
+		{
+			if (f(tab[i],tab[x]) > 0)
+				return 0;
+			x++;
+		}
+		i++;
 	}
-	return (1);
+	return 1;
+}
+
+int	ft_cmp(int a, int b)
+{
+	return (a - b);
+}
+
+#include <stdio.h>
+int main()
+{
+	int tab[] = {1,2,3,4,5,6,2,4,1,2};
+	int sorted = ft_is_sort(tab, 10, &ft_cmp);
+	printf("%d", sorted);
 }
