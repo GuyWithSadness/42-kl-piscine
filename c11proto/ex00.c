@@ -21,5 +21,5 @@ void ft_putnbr(int a)
 int main()
 {
 	int tab[] = {1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0};
-	ft_foreach(tab, 20, &ft_putnbr);
+	ft_foreach(tab, 20, ft_putnbr);
 }

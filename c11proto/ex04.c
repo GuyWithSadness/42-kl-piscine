@@ -29,6 +29,6 @@ int	ft_cmp(int a, int b)
 int main()
 {
 	int tab[] = {1,2,3,4,5,6,2,4,1,2};
-	int sorted = ft_is_sort(tab, 10, &ft_cmp);
+	int sorted = ft_is_sort(tab, 10, ft_cmp);
 	printf("%d", sorted);
 }

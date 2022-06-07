@@ -1,35 +1,68 @@
-#include <stdio.h>
-char	*ft_strupcase(char *str);
+void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *));
+int		ft_strcmp(char *current, char *compare);
 
-int main()
+void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
 {
-	char *e;
-	char a[] = "abcdefghijklmnopqrstuvwxyz";
-	e = ft_strupcase(a);
-	printf("%s \n", e);
-	char b[] = "AwhJADWhLAJWHDjawdlahDWJ";
-	ft_strupcase(b);
-	printf("%s \n", b);
-	char c[] = "awdian*8)%$$69awndabwbdao";
-	ft_strupcase(c);
-	printf("%s \n", c);
-	char d[] = "sex";
-	ft_strupcase(d);
-	printf("%s", d);
+	int i;
+	int j;
+	char *temp;
+
+	i = 0;
+	while (tab[i] != 0)
+	{
+		j = i + 1;
+		while (tab[j] != 0)
+		{
+			if (cmp(tab[i], tab[j]) > 0)
+			{
+				temp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
-char	*ft_strupcase(char *str)
+int		ft_strcmp(char *current, char *compare)
 {
 	int i;
 
 	i = 0;
-	while ( str[i] != '\0' )
+	while (current[i] == compare[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] -= 32;
-		}
-		++i;
+		if (current[i] == '\0')
+			return (0);
+		i++;
 	}
-	return str;
+	return (current[i] - compare[i]);
+}
+
+#include <stdio.h>
+int main()
+{
+	char *tab[] = {
+		"b",
+		"a",
+		"c",
+		"s",
+		"d",
+		"avadwa",
+		"bawdaw",
+		"bcadwad",
+		"zadw",
+		"e",
+		0
+	};
+
+	ft_advanced_sort_string_tab(tab, ft_strcmp);
+	int i;
+	int j;
+	i = 0;
+	while (tab[i] != 0)
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
 }
