@@ -7,3 +7,4 @@ gcc -c *.c
 # s = does.... something
 # remember to use ar -p libft.a to see the content
 ar -rcs libft.a *.o
+rm -rf *.o

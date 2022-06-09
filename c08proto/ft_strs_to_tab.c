@@ -1,14 +1,7 @@
-// #include "ft_stock_str.h"
+#include "ft_stock_str.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "ft_show_tab.c"
-
-// typedef struct s_stock_str
-// {
-// 	int size;
-// 	char *str;
-// 	char *copy;
-// } t_stock_str;
 
 char	*ft_strdup(char *src)
 {
@@ -42,7 +35,7 @@ struct s_stock_str *ft_strs_to_tab(int ac, char **av)
 	int i;
 	t_stock_str *array;
 
-	array = ((t_stock_str *) malloc ((ac - 1) * sizeof (t_stock_str)));
+	array = ((t_stock_str *) malloc ((ac + 1) * sizeof (t_stock_str)));
 	if (!array)
 		return (0);
 	i = 1;
@@ -63,6 +56,7 @@ struct s_stock_str *ft_strs_to_tab(int ac, char **av)
 int main(int ac, char **av)
 {
 	struct s_stock_str *test;
+
 	test = ft_strs_to_tab(ac, av);
 	ft_show_tab(test);
 	return 0;

@@ -1,10 +1,4 @@
-typedef struct s_stock_str
-{
-	int size;
-	char *str;
-	char *copy;
-} t_stock_str;
-
+#include "ft_stock_str.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -16,6 +10,7 @@ void 	ft_putchar(char a);
 void ft_show_tab(struct s_stock_str *par)
 {
 	int i;
+
 	i = 0;
 	while (par[i].str != 0)
 	{
@@ -24,6 +19,7 @@ void ft_show_tab(struct s_stock_str *par)
 		ft_putnbr(par[i].size);
 		ft_putchar('\n');
 		ft_printstr(par[i].copy);
+		ft_putchar('\n');
 		ft_putchar('\n');
 		i++;
 	}

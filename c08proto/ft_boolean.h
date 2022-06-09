@@ -23,6 +23,6 @@
 
 typedef int	t_bool;
 
-# define EVEN(nbr) ((nbr) % 2)
+# define EVEN(nbr) (!((nbr) % 2))
 
 #endif
