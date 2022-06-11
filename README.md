@@ -1,20 +1,20 @@
 # 42-kl
 
-prototypes of what i did
-42-kl piscine ended on 10/6/2022
-it was fun while it lasted
+prototypes of what i did <br />
+42-kl piscine ended on 10/6/2022 <br />
+it was fun while it lasted <br />
 
 
-Exam Scores -
-Exam 00 - 80
-Exam 01 - 84
-Exam 02 - (had problems with grademe) 64 (i think)
-Final Exam - 84
+Exam Scores - <br />
+Exam 00 - 80 <br />
+Exam 01 - 84 <br />
+Exam 02 - (had problems with grademe) 64 (i think) <br />
+Final Exam - 84 <br />
 
-Fail to Complete -
-Shell 02
-C09
-C10
-C11
-C12
-C13
+Fail to Complete - <br />
+Shell 02 <br />
+C09 <br />
+C10 <br />
+C11 <br />
+C12 <br />
+C13 <br />
