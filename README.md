@@ -7,8 +7,8 @@ it was fun while it lasted <br />
 
 Exam Scores - <br />
 Exam 00 - 80 <br />
-Exam 01 - 84 <br />
-Exam 02 - (had problems with grademe) 64 (i think) <br />
+Exam 01 - (had problems with grademe) 64 (i think) <br />
+Exam 02 - 84 <br />
 Final Exam - 84 <br />
 
 Fail to Complete - <br />
